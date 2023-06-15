@@ -34,15 +34,15 @@ const HomePage: NextPage = () => {
   };
 
   return (
-    <div className="bg-zinc-950 min-h-screen flex justify-center items-center">
-      <form onSubmit={onSubmit} className="bg-zinc-900 p-10">
+    <div className="bg-zinc-900 min-h-screen flex justify-center items-start">
+      <form onSubmit={onSubmit} className="bg-zinc-900 p-10 h-screen">
         <h1 className="text-2xl font-bold text-slate-200 mb-5">
-          Programmer Jokes Generator
+          Generador de chistes de programadores
         </h1>
         <input
           type="text"
           name="name"
-          placeholder="Enter a topic for generate the joke"
+          placeholder="Entre un tema"
           onChange={(e) => setPrompt(e.target.value)}
           className="p-2 rounded-md block bg-neutral-700 text-white w-full"
           value={prompt}
@@ -53,7 +53,7 @@ const HomePage: NextPage = () => {
           className="mt-8 bg-green-500 p-2 rounded-md block disabled:opacity-50 text-white"
           disabled={!prompt || loading}
         >
-          {loading ? "Thinking..." : "Generate"}
+          {loading ? "Pensando..." : "Generar"}
         </button>
         {result && (
           <p className="text-xl font-bold text-white max-w-xs my-10">
